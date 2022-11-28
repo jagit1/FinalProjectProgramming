@@ -144,9 +144,6 @@ app = Flask(__name__, static_folder='static', template_folder='Templates')
 #    print("MainReview = ", row[7])
 #conn.close()
 
-@app.route('/gittest')
-def gittest():
-    return render_template("Gittest.html")
 
 @app.route('/home')
 def home():

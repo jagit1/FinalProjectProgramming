@@ -1,0 +1,54 @@
+<!--Moved this chart into Chart2 using the template dashboard fromm Bootstrap - no longer in use-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.min.js" integrity="sha512-tQYZBKe34uzoeOjY9jr3MX7R/mo7n25vnqbnrkskGr4D6YOoPYSpyafUAzQVjV6xAozAqUFIEFsCO4z8mnVBXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Chart1</title>
+
+</head>
+<body>
+<div>
+    <div >
+        <canvas id="myChart"  height="100vh"></canvas>
+    </div>
+</div>
+<!--code below from https://www.chartjs.org/docs/latest/getting-started/-->
+<!--for further styling etc: https://www.chartjs.org/docs/latest/general/padding.html-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+  const ctx = document.getElementById('myChart');
+  let newdata = JSON.parse({{ data | tojson}});
+  let newcountry = JSON.parse({{ country | tojson}});
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017',],
+      datasets: [{
+        label: 'Proportion of Electricity From Renewable Sources for Your Chosen Country {{newcountry}}',
+        data: newdata,
+        borderWidth: 1
+
+      }]
+    },
+    options: {
+
+      scales: {
+
+        y: {
+                type: 'linear',
+                min: 0,
+                max: 100
+            }
+      }
+    }
+  });
+</script>
+
+
+
+</body>
+</html>

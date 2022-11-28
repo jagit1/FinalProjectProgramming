@@ -1,0 +1,6 @@
+<!--Below taken from Bootstrap examples at https://getbootstrap.com/docs/4.0/examples/ taken by copying the text from the navbar-top file, creating the file in my CSS folder here and then referring to it in my folder here-->
+
+/* Show it's not fixed to the top */
+body {
+  min-height: 75rem;
+}

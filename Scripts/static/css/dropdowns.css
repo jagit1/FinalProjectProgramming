@@ -1,0 +1,103 @@
+<!--Below taken from Bootstrap examples of dropdowns - top one at https://getbootstrap.com/docs/5.1/examples/dropdowns/ taken by copying the text from the dropdowns css file, creating the file in my CSS folder here and then referring to it in my folder here-->
+
+
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.dropdown-menu {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  margin: 4rem auto;
+}
+.dropdown-item-main{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border: 20px;
+
+}
+.dropdown-item{
+  display: block;
+  width: 100%;
+  border: 20px;
+}
+.dropdown-menu:hover .dropdown-item {
+  display: block;
+  position: relative;
+  border:20px;
+}
+
+.dropdown-menu:onmouseout .dropdown-item {
+  display: none;
+}
+
+
+.dropdown-menu-macos {
+  position: relative;
+  display: inline-block;
+  gap: .25rem;
+  padding: .5rem;
+  border-radius: .5rem;
+}
+.dropdown-menu-macos .dropdown-item {
+  display: none;
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+}
+
+.dropdown-menu-macos:hover .dropdown-item {
+  display: block;
+}
+
+.select main{
+
+}
+
+.select item{
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+}
+
+.dropdown-item-danger {
+  color: var(--bs-red);
+}
+.dropdown-item-danger:hover,
+.dropdown-item-danger:focus {
+  color: #fff;
+  background-color: var(--bs-red);
+}
+.dropdown-item-danger.active {
+  background-color: var(--bs-red);
+}
+
+.btn-hover-light {
+  text-align: left;
+  background-color: var(--bs-white);
+  border-radius: .25rem;
+}
+.btn-hover-light:hover,
+.btn-hover-light:focus {
+  color: var(--bs-blue);
+  background-color: var(--bs-light);
+}
+
+.form-control-dark {
+  background-color: rgba(255, 255, 255, .05);
+  border-color: rgba(255, 255, 255, .15);
+}

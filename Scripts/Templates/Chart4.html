@@ -1,3 +1,5 @@
+<!-- Using the code form here to try to use google charts instead of charts.js - https://www.w3schools.com/js/js_graphics_google_chart.asp-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,17 +13,6 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/">
 
 <link href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-<!--
-     Favicons
-<link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
-<meta name="theme-color" content="#712cf9">
--->
-
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -90,7 +81,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Search Again?</a>
+          <a class="nav-link active" aria-current="page" href="{{ url_for('searchghg') }}">Search Again?</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ url_for('home') }}">Home</a>
@@ -100,32 +91,16 @@
     </div>
   </div>
 </nav>
-<!-- removed the old header below and replaced with the same one as used on the previous page - the search page, for continuity
-<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Company name</a>
-  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
-  <div class="navbar-nav">
-    <div class="nav-item text-nowrap">
-      <a class="nav-link px-3" href="#">Sign out</a>
-    </div>
-  </div>
-</header>
--->
+
 <div class="container-fluid">
   <div class="row">
 
-
   </div>
 <div style="width: 80vw; height: 60vh; float:left; align: center; margin-left: 150px; display: flex">
-      <canvas  class="my-4 w-100 chartjs-render-monitor" id="myChart" width="1144" height="482" style="display: block; height: 150px; width: 500px; align: center;"></canvas>
+      <div id="myChart3" style="max-width:700px; height:400px"></div>
 </div>
 
-
   </div>
-
 
     <script src="https://getbootstrap.com/docs/5.2/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
 
@@ -135,43 +110,30 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.js"  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.min.js"  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <script>
+  google.charts.load('current',{packages:['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
 
-  const ctx = document.getElementById('myChart');
-  let newdata = JSON.parse({{ data | tojson}});
-  let newcountry = JSON.parse({{ country | tojson}});
+  function drawChart() {
+//Set Data
+  newdata2 = JSON.parse({{ data2 | tojson}});
+  var data = google.visualization.arrayToDataTable([
+  ['newdata2'],
 
-  var newcharrt = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: ['1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017',],
-      datasets: [{
-        label: 'Proportion of Electricity From Renewable Sources for Your Chosen Country',
-        data: newdata,
-        borderWidth: 2,
-        borderColor: '#36A2EB',
-        backgroundColor: '#9BD0F5',
-      }]
-    },
-    options: {
-      scales: {
-        y: {    type: 'linear',
-                min: 0,
-                max: 100
-            }
-            },
-      plugins: {
-        legend:{
-            display: false,
-        },
-        subtitle: {
-                display: true,
-                text: 'Custom Chart Subtitle'
+]);
+//Set Options
+  var options = {
+  title: 'GHG thing',
+  hAxis: {title: 'One thing'},
+  vAxis: {title: 'Another'},
+  legend: 'none'
+};
+//Draw
+  var chart = new google.visualization.LineChart(document.getElementById('myChart2'));
+  chart.draw(data, options);
 
-            }
-      },
-    }
-  });
-  chart.render()
+
   </script>
   </body>
 </html>

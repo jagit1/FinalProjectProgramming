@@ -226,7 +226,7 @@ def searchintghg():
                         print("This is subset c ", c)
                         print("This is subset d ", d)
                         print("There is a row in the database for that country")
-                        return render_template('Chart3.html', data2=json.dumps(c), country=json.dumps(submit))
+                        return render_template('Chart3.html', data=json.dumps(c), country=json.dumps(submit))
                     else:
                         ErrorMessage = "Passed all checks but No country found Please enter the details on the form"
                         return render_template('ErrorPage.html' , ErrorMessage=ErrorMessage)

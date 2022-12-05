@@ -131,20 +131,21 @@
         y: {    type: 'linear',
                 min: 0,
                 max: 100,
+                beginatZero: true
             }
             },
       plugins: {
         legend:{
-            display: false,
+            display: true,
         },
         subtitle: {
-                display: true,
+                display: false,
                 text: 'Custom Chart Subtitle'
             }
             },
-
     }
   });
+  chart.render();
 
   </script>
   </body>

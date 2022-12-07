@@ -1,5 +1,4 @@
 import json
-
 from flask import Flask, render_template, request, url_for, flash, jsonify
 import sqlite3
 import re
@@ -200,7 +199,7 @@ def searchghg():
     return render_template("IntGHGSearchPage.html")
 
 @app.route("/searchintghgtable", methods=["POST", "GET"])
-##this works to check if the country is on the list and returns its graph of the trend over time of the renewable energy proportion
+##this works to check if the country is on the list and returns its graph of the trend over time of the greenhouse gas emmissions
 def searchintghg():
     if request.method == "POST":
         submit = request.form["search2"].strip()
@@ -226,7 +225,7 @@ def searchintghg():
                         print("This is subset c ", c)
                         print("This is subset d ", d)
                         print("There is a row in the database for that country")
-                        return render_template('Chart3.html', data=json.dumps(c), country=json.dumps(submit))
+                        return render_template('Chart3.html', data2=json.dumps(c), country2=json.dumps(submit))
                     else:
                         ErrorMessage = "Passed all checks but No country found Please enter the details on the form"
                         return render_template('ErrorPage.html' , ErrorMessage=ErrorMessage)

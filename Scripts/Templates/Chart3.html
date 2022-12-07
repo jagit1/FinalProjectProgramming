@@ -100,52 +100,56 @@
 
   </div>
 
-    <script src="https://getbootstrap.com/docs/5.2/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
+  <script src="https://getbootstrap.com/docs/5.2/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"  crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"  crossorigin="anonymous"></script>
-    <script src="../static/js/dashboard2.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"  crossorigin="anonymous"></script>
+  <script src="../static/js/dashboard2.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.js"  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.min.js"  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script src="https://www.gstatic.com/charts/loader.js"></script>
-  <script>
-  const ctx2 = document.getElementById('myChart2');
-  let newdata2 = JSON.parse({{ data | tojson}});
-  let newcountry = JSON.parse({{ country | tojson}});
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  new Chart(ctx2, {
-    type: 'line',
-    data: {
-      labels: ['1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
-      datasets: [{
+  <script>
+    const ctx2 = document.getElementById('myChart2');
+    let newdata2 = JSON.parse({{ data2 | tojson}});
+    let newcountry2 = JSON.parse({{ country2 | tojson}});
+
+    new Chart(ctx2, {
+      type: 'line',
+      data: {
+        labels: ['1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
+        datasets: [{
         label: 'Greenhouse Gases produced in the time period for Your Chosen Country',
+        yAxisID: 'yAxis',
+        xAxisID: 'xAxis',
         data: newdata2,
         borderWidth: 2,
         borderColor: '#36A2EB',
         backgroundColor: '#9BD0F5',
       }]
-    },
-    options: {
-      scales: {
-        y: {    type: 'linear',
-                min: 0,
-                max: 100,
-                beginatZero: true
-            }
-            },
-      plugins: {
-        legend:{
-            display: true,
-        },
-        subtitle: {
-                display: false,
-                text: 'Custom Chart Subtitle'
-            }
-            },
-    }
-  });
-  chart.render();
+      },
+      options: {
+        scales: {
+
+          yAxis: {    type: 'linear',
+                      min: 0,
+                      max: 2000000
+                 }
+              },
+        plugins: {
+          legend:{
+              display: true,
+          },
+          subtitle: {
+                  display: false,
+                  text: 'Custom Chart Subtitle'
+              }
+         },
+      }
+    });
+    chart.render()
 
   </script>
   </body>

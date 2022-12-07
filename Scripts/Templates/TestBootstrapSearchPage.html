@@ -115,7 +115,7 @@
     <p class="lead">Search a country and see its progress in switching to renewable sources of energy.</p>
     <!--<a class="btn btn-lg btn-primary" href="#/docs/5.2/components/navbar/" role="button">Placeholder text &raquo;</a>-->
     <form class="d-flex" role="search" name ="form" , action="{{url_for('searchrenewableenergy')}}" method="POST">
-        <input id ="Search1"class="form-control me-2" name ="search" type="search" placeholder="Enter Name of County beginning with a capital letter" aria-label="Search" required> <!--pattern="[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ]" OR pattern="/^[a-zA-Z]+$/"-->
+        <input id ="Search1" class="form-control me-2" name ="search" type="search" placeholder="Enter Name of County beginning with a capital letter" aria-label="Search" required> <!--pattern="[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ]" OR pattern="/^[a-zA-Z]+$/"-->
         <button class="btn btn-outline-success" name ="submit"  onsubmit="{{url_for('searchrenewableenergy')}}" method="POST">Search</button>
       </form>
   </div><!--Not finding the above bootstrap still - Error 404-->

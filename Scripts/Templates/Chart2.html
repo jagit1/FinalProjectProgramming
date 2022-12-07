@@ -134,6 +134,7 @@
     <script src="../static/js/dashboard2.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.js"  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.min.js"  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
 
   const ctx = document.getElementById('myChart');
@@ -161,10 +162,10 @@
             },
       plugins: {
         legend:{
-            display: false,
+            display: true,
         },
         subtitle: {
-                display: true,
+                display: false,
                 text: 'Custom Chart Subtitle'
 
             }

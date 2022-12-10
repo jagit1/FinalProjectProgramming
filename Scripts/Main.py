@@ -220,8 +220,28 @@ def searchintghg():
                         c = []
                         d = [1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]
                         for i in row:
-                            c.append(i)
+
+                            c.append.int(i)
                         c.pop(0)
+                        for i in c: #(i = 0, i < len(c), i++)-->:
+                            if i <= 100:
+                                i = i;
+                            #elif (i > 100 & i <= 1000):
+                            elif(i <= 1000):
+                                 i = i/10;
+                            #elif i > 1000 & i <= 10000:
+                            elif i <= 10000:
+                                 i = i/100;
+                            #elif (i > 10000 & i <= 100000):
+                            elif i <= 100000:
+                                i =i/1000;
+                            #elif (i > 100000 & i <= 1000000):
+                            elif i <= 1000000:
+                                i =i/10000;
+                            else :
+                                i =i/100000;
+                        print(c)
+
                         print("This is subset c ", c)
                         print("This is subset d ", d)
                         print("There is a row in the database for that country")

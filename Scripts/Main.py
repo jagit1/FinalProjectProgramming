@@ -226,9 +226,14 @@ def searchintghg():
                         c.pop(0)
                         print("printing the full list c inside the loop after popping the first element ", c)
                         for j in c:
-                            e.append(float(j.replace(',','')))
-
-                        print("This is list e after converting from string to float", e)
+                            #below line by itself works or use the if else loop below also - same result
+                            e.append(float(j.replace(',', '')))
+                            #if j.find(',') != -1:
+                            #if ',' in j:
+                            #    e.append(float(j.replace(',','')))
+                            #else:
+                            #    e.append(float(j))
+                        print("This is list e after converting from string to float and dropping the ,", e)
                         #for k in e: #(i = 0, i < len(c), i++)-->:
                         #    if k <= 100:
                         #        f.append(k)

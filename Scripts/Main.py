@@ -216,6 +216,7 @@ def searchintghg():
                     cur.execute("select * from InternationalGHG where Country= '%s'" %submit)
                     row  = cur.fetchone()
                     if row:
+                        print("")
                         print("printing the full row inside the loop ", row)
                         c = []
                         d = [1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]
@@ -224,6 +225,7 @@ def searchintghg():
                         for i in row:
                             c.append(i)
                         c.pop(0)
+                        print("")
                         print("printing the full list c inside the loop after popping the first element ", c)
                         for j in c:
                             #below line by itself works or use the if else loop below also - same result
@@ -233,6 +235,7 @@ def searchintghg():
                             #    e.append(float(j.replace(',','')))
                             #else:
                             #    e.append(float(j))
+                        print("")
                         print("This is list e after converting from string to float and dropping the ,", e)
                         #for k in e: #(i = 0, i < len(c), i++)-->:
                         #    if k <= 100:
@@ -259,7 +262,9 @@ def searchintghg():
                                 #k =k/100000;
 
                         #print("This is list f after calculation if/else loop ", f)
+                        print("")
                         print("This is subset d ", d)
+                        print("")
                         print("There is a row in the database for that country")
                         return render_template('Chart3.html', data2=json.dumps(e), country2=json.dumps(submit))
                     else:

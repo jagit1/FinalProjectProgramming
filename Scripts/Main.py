@@ -219,33 +219,44 @@ def searchintghg():
                         print("printing the full row inside the loop ", row)
                         c = []
                         d = [1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]
+                        e = []
+                        f = []
                         for i in row:
-
-                            c.append.int(i)
+                            c.append(i)
                         c.pop(0)
-                        for i in c: #(i = 0, i < len(c), i++)-->:
-                            if i <= 100:
-                                i = i;
-                            #elif (i > 100 & i <= 1000):
-                            elif(i <= 1000):
-                                 i = i/10;
-                            #elif i > 1000 & i <= 10000:
-                            elif i <= 10000:
-                                 i = i/100;
-                            #elif (i > 10000 & i <= 100000):
-                            elif i <= 100000:
-                                i =i/1000;
-                            #elif (i > 100000 & i <= 1000000):
-                            elif i <= 1000000:
-                                i =i/10000;
-                            else :
-                                i =i/100000;
-                        print(c)
+                        print("printing the full list c inside the loop after popping the first element ", c)
+                        for j in c:
+                            e.append(float(j.replace(',','')))
 
-                        print("This is subset c ", c)
+                        print("This is list e after converting from string to float", e)
+                        #for k in e: #(i = 0, i < len(c), i++)-->:
+                        #    if k <= 100:
+                        #        f.append(k)
+                                #k = k;
+                            #elif (i > 100 & i <= 1000):
+                        #    elif(k <= 1000):
+                        #        f.append(k/10)
+                                 #k = k/10;
+                            #elif i > 1000 & i <= 10000:
+                        #    elif k <= 10000:
+                        #        f.append(k / 100)
+                                 #k = k/100;
+                            #elif (i > 10000 & i <= 100000):
+                        #    elif k <= 100000:
+                        #        f.append(k/1000)
+                                #k =k/1000;
+                            #elif (i > 100000 & i <= 1000000):
+                        #    elif k <= 1000000:
+                        #        f.append(k / 10000)
+                                #k =k/10000;
+                        #    else :
+                        #        f.append(k/100000)
+                                #k =k/100000;
+
+                        #print("This is list f after calculation if/else loop ", f)
                         print("This is subset d ", d)
                         print("There is a row in the database for that country")
-                        return render_template('Chart3.html', data2=json.dumps(c), country2=json.dumps(submit))
+                        return render_template('Chart3.html', data2=json.dumps(e), country2=json.dumps(submit))
                     else:
                         ErrorMessage = "Passed all checks but No country found Please enter the details on the form"
                         return render_template('ErrorPage.html' , ErrorMessage=ErrorMessage)

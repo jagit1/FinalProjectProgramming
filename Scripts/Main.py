@@ -380,7 +380,7 @@ def searchirishenergytable():
 
                 with sqlite3.connect("C:\\Users\jarla\OneDrive\Desktop\TestDB.db") as conn:
                     cur = conn.cursor()
-                    cur.execute("select * from IrishEnergyBreakdown where Fuel Group Hierarchy - Fuel Group = '%s'" %submit)
+                    cur.execute("select * from IrishEnergyBreakdown where FuelType = '%s'" %submit)
                     row  = cur.fetchone()
                     if row:
                         print("")

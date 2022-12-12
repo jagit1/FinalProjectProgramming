@@ -13,6 +13,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dropdowns/">
 <!--amended below by adding the reference to it on the web-->
     <link href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
+    <link href="../static/css/dropdowns.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -103,9 +104,9 @@
     <li><a class="dropdown-item rounded-2" href="#">Separated link</a></li>
   </ul>
 </div>
-
+--><!--
 <div class="b-example-divider"></div>-->
-
+<!--
 <div class="d-flex gap-5 justify-content-center">
   <div class="dropdown-menu d-block position-static pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px">
     <form class="p-2 mb-2 bg-light border-bottom">
@@ -130,19 +131,37 @@
       </a></li>
     </ul>
   </div>
+-->
 
+    <!--OPTION B NEED TO MAKE THIS DROPDOWNLIST POST TO THE ROUTE
+  <div class="d-flex gap-5 justify-content-center" id="dropdownMacos2" style = "float: left; width:100%;">
+
+  <ul class="dropdown-menu dropdown-menu-macos mx-0 shadow" style="width: 300px;">
+    <li><p class="dropdown-item-main">Fuel Type</p></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST" >Coal</a></li>
+    <li><a class="dropdown-item" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST">Electricity</a></li>
+    <li><a class="dropdown-item" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST">Natural Gas</a></li>
+    <li><a class="dropdown-item" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST">Non-Renewable Waste</a></li>
+    <li><a class="dropdown-item" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST">Oil</a></li>
+    <li><a class="dropdown-item" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST">Peat</a></li>
+    <li><a class="dropdown-item" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST">Renewable</a></li>
+
+  </ul>
+</div>-->
+<!-- OPTION A  UNCOMMENT BELOW TO GET THAT BACK WORKING AGAIN>-->
   <div class="dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px">
     <form class="p-2 mb-2 bg-dark border-bottom border-dark" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST">
-      <input type="search" class="form-control form-control-dark" autocomplete="true" placeholder="Enter a fuel type...">
-    </form>
+      <input type="search" name="search4" class="form-control form-control-dark" autocomplete="true" placeholder="Enter a fuel type - Coal,Electricity, Natural Gas, Non-Renewable Waste, Oil, Peat, Renewables">
+<!-- OPTION A  below does not link to the app route or send a query to the DB>-->
     <ul class="list-unstyled mb-0">
-      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
+      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST">
         <span class="d-inline-block bg-success rounded-circle p-1"></span>
-        Action
+        Coal
       </a></li>
       <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
         <span class="d-inline-block bg-primary rounded-circle p-1"></span>
-        Another action
+        Another Fueltype
       </a></li>
       <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
         <span class="d-inline-block bg-danger rounded-circle p-1"></span>
@@ -153,15 +172,10 @@
         Separated link
       </a></li>
     </ul>
+    </form>
   </div>
-</div>
-    <!--<h1>Greenhouse Gases - trend over time</h1>
-    <p class="lead">Search a country and see how many kilotons of CO2 were produced per year over the time span.</p>
-    <a class="btn btn-lg btn-primary" href="#/docs/5.2/components/navbar/" role="button">Placeholder text &raquo;</a>-->
-    <!--<form class="d-flex" role="search" name ="form" , action="{{url_for('searchintghg')}}" method="POST">
-        <input id ="Search2" class="form-control me-2" name ="search2" type="search" placeholder="Enter Name of County beginning with a capital letter" aria-label="Search" required> <!--pattern="[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ]" OR pattern="/^[a-zA-Z]+$/"
-        <button class="btn btn-outline-success" name ="submit2"  onsubmit="{{url_for('searchintghg')}}" method="POST">Search</button>
-    </form> -->
+</div>-->
+
   </div>
 </main>
 

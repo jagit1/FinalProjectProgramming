@@ -150,10 +150,11 @@
   </ul>
 </div>-->
 <!-- OPTION A  UNCOMMENT BELOW TO GET THAT BACK WORKING AGAIN>-->
+    <!--
   <div class="dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px">
     <form class="p-2 mb-2 bg-dark border-bottom border-dark" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST">
       <input type="search" name="search4" class="form-control form-control-dark" autocomplete="true" placeholder="Enter a fuel type - Coal,Electricity, Natural Gas, Non-Renewable Waste, Oil, Peat, Renewables">
-<!-- OPTION A  below does not link to the app route or send a query to the DB>-->
+<!- OPTION A  below does not link to the app route or send a query to the DB
     <ul class="list-unstyled mb-0">
       <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST">
         <span class="d-inline-block bg-success rounded-circle p-1"></span>
@@ -175,6 +176,36 @@
     </form>
   </div>
 </div>-->
+    <!-- OPTION A  UNCOMMENT ABOVE TO GET THAT BACK WORKING AGAIN>-->
+
+    <!-- OPTION C - Checkboxes  UNCOMMENT BELOW TO GET THAT BACK WORKING AGAIN>-->
+
+
+<div class="dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px">
+    <form class="p-2 mb-2 bg-dark border-bottom border-dark" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST">
+
+    <form class="p-2 mb-2 bg-dark border-bottom border-dark" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST">
+  <input type="radio" id="fueltype1" name="search4" value="Coal" onChange="this.form.submit()">
+  <label for="fueltype1"> Coal</label><br>
+  <input type="radio" id="fueltype2" name="search4" value="Electricity"  onChange="this.form.submit()">
+  <label for="fueltype2"> Electricity</label><br>
+  <input type="radio" id="fueltype3" name="search4" value="Natural Gas"  onChange="this.form.submit()">
+  <label for="fueltype3"> Natural Gas</label><br>
+  <input type="radio" id="fueltype4" name="search4" value="Non Renewable Waste"  onChange="this.form.submit()">
+  <label for="fueltype4"> Non Renewable Waste</label><br>
+  <input type="radio" id="fueltype5" name="search4" value="Oil"  onChange="this.form.submit()">
+  <label for="fueltype5"> Oil</label><br>
+  <input type="radio" id="fueltype6" name="search4" value="Peat"  onChange="this.form.submit()">
+  <label for="fueltype6"> Peat</label><br>
+  <input type="radio" id="fueltype7" name="search4" value="Renewables"  onChange="this.form.submit()">
+  <label for="fueltype7"> Renewables</label><br>
+
+  <input type="submit" value="Submit">
+</form>
+    </form>
+  </div>
+
+    <!-- OPTION C - Checkboxes  UNCOMMENT BELOW TO GET THAT BACK WORKING AGAIN>-->
 
   </div>
 </main>

@@ -408,7 +408,7 @@ def searchirishenergytable():
                         print("There is a row in the database for that country")
                         return render_template('Chart6.html', data4=json.dumps(c), country4=json.dumps(submit))
                     else:
-                        ErrorMessage = "Passed all checks but No country found Please enter the details on the form"
+                        ErrorMessage = "Passed all checks but No fueltype found Please return to the previous page and select an option"
                         return render_template('ErrorPage.html' , ErrorMessage=ErrorMessage)
             else:
                 print("IsAlphaFalse Your input contains something other than letters")

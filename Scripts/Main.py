@@ -417,6 +417,63 @@ def searchirishenergytable():
             print("IsUpperFalseThe first letter is not a capital letter")
             return render_template('ErrorPage.html', ErrorMessage="IsUpperFalseStart with a capital letter")
 
+@app.route('/searchirishenergybysector')
+def searchirishenergybysector():
+    return render_template("IrishEnergyTemplate3.html")
+
+
+@app.route("/searchirishenergybysectortable", methods=["POST", "GET"])
+##this works to check if the country is on the list and returns its graph of the trend over time of the greenhouse gas emmissions
+def searchirishenergybysectortable():
+    if request.method == "POST":
+        submit = request.form["search5"].strip()
+        print("This is what you entered: ", submit)
+#checking the first letter is a capital as that is the format of the data in the table
+        if (submit[0].isupper()):
+            print("The first letter is a capital letter")
+# checking that only letters and spaces are used as that is the format of the data in the table
+            if all(char.isalpha() or char.isspace() for char in submit):
+                print("Your input is a string of letters or spaces")
+
+                with sqlite3.connect("C:\\Users\jarla\OneDrive\Desktop\TestDB.db") as conn:
+                    cur = conn.cursor()
+                    cur.execute("select * from My combined file kiloton breakdown by sector where Sector = '%s'" %submit)
+                    row  = cur.fetchone()
+                    if row:
+                        print("")
+                        print("printing the full row inside the loop ", row)
+                        c = []
+                        d = [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2021]
+                        e = []
+                        f = []
+                        for i in row:
+                            c.append(i)
+                        c.pop(0)
+                        print("")
+                        print("printing the full list c inside the loop after popping the first element ", c)
+                        #for j in c:
+                            #below line by itself works or use the if else loop below also - same result
+                        #    e.append(float(j.replace(',', '')))
+                            #if j.find(',') != -1:
+                            #if ',' in j:
+                            #    e.append(float(j.replace(',','')))
+                            #else:
+                            #    e.append(float(j))
+                        print("")
+                        print("This is subset d ", d)
+                        print("")
+                        print("There is a row in the database for that sector")
+                        return render_template('Chart7.html', data5=json.dumps(c), country5=json.dumps(submit))
+                    else:
+                        ErrorMessage = "Passed all checks but No sector found Please return to the previous page and select an option"
+                        return render_template('ErrorPage.html' , ErrorMessage=ErrorMessage)
+            else:
+                print("IsAlphaFalse Your input contains something other than letters")
+                return render_template('ErrorPage.html', ErrorMessage="IsAlphaFalseEnter letters only")
+        else:
+            print("IsUpperFalseThe first letter is not a capital letter")
+            return render_template('ErrorPage.html', ErrorMessage="IsUpperFalseStart with a capital letter")
+
 #Below from here also  - used to show what's entered through the form and the connection to the database - info going in to the database,
 #https://www.tutorialspoint.com/flask/flask_sqlite.htm
 #Below route shows all the user accounts held on that table in the database

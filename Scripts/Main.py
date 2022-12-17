@@ -421,7 +421,6 @@ def searchirishenergytable():
 def searchirishenergybysector():
     return render_template("IrishEnergyTemplate3.html")
 
-
 @app.route("/searchirishenergybysectortable", methods=["POST", "GET"])
 ##this works to check if the country is on the list and returns its graph of the trend over time of the greenhouse gas emmissions
 def searchirishenergybysectortable():
@@ -437,7 +436,7 @@ def searchirishenergybysectortable():
 
                 with sqlite3.connect("C:\\Users\jarla\OneDrive\Desktop\TestDB.db") as conn:
                     cur = conn.cursor()
-                    cur.execute("select * from My combined file kiloton breakdown by sector where Sector = '%s'" %submit)
+                    cur.execute("select * from SectIrelandEnergy where Sector = '%s'" %submit)
                     row  = cur.fetchone()
                     if row:
                         print("")

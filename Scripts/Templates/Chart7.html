@@ -79,7 +79,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Search Again?</a>
+          <a class="nav-link active" aria-current="page" href="{{ url_for('searchirishenergybysector') }}">Search Again?</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ url_for('home') }}">Home</a>
@@ -95,7 +95,7 @@
 
   </div>
 <div style="width: 80vw; height: 60vh; float:left; align: center; margin-left: 150px; display: flex">
-      <canvas  class="my-4 w-100 chartjs-render-monitor" id="myChart7m,bh" width="1144" height="482" style="display: block; height: 150px; width: 500px; align: center;"></canvas>
+      <canvas  class="my-4 w-100 chartjs-render-monitor" id="myChart7" width="1144" height="482" style="display: block; height: 150px; width: 500px; align: center;"></canvas>
 </div>
 
   </div>
@@ -123,7 +123,7 @@
         labels: ['1990', '1995', '2000', '2005', '2010', '2015', '2020', '2021'],
         datasets: [{
         label: 'Kilotons of energy used by that sector per year over the time period for Your Chosen Sector',
-        data: newdata4,
+        data: newdata5,
         borderWidth: 2,
         borderColor: '#36A2EB',
         backgroundColor: '#9BD0F5',

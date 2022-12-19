@@ -394,14 +394,6 @@ def searchirishenergytable():
                         c.pop(0)
                         print("")
                         print("printing the full list c inside the loop after popping the first element ", c)
-                        #for j in c:
-                            #below line by itself works or use the if else loop below also - same result
-                        #    e.append(float(j.replace(',', '')))
-                            #if j.find(',') != -1:
-                            #if ',' in j:
-                            #    e.append(float(j.replace(',','')))
-                            #else:
-                            #    e.append(float(j))
                         print("")
                         print("This is subset d ", d)
                         print("")
@@ -450,14 +442,6 @@ def searchirishenergybysectortable():
                         c.pop(0)
                         print("")
                         print("printing the full list c inside the loop after popping the first element ", c)
-                        #for j in c:
-                            #below line by itself works or use the if else loop below also - same result
-                        #    e.append(float(j.replace(',', '')))
-                            #if j.find(',') != -1:
-                            #if ',' in j:
-                            #    e.append(float(j.replace(',','')))
-                            #else:
-                            #    e.append(float(j))
                         print("")
                         print("This is subset d ", d)
                         print("")
@@ -508,16 +492,11 @@ def searchcarregbyengtypetable():
                         print("")
                         print("printing the full list c inside the loop after popping the first element ", c)
                         for j in c:
-                        # below line by itself works or use the if else loop below also - same result
                             e.append(float(j.replace(',', '')))
-                        # if j.find(',') != -1:
-                        # if ',' in j:
-                        #    e.append(float(j.replace(',','')))
-                        # else:
-                        #    e.append(float(j))
                         print("")
                         print("This is subset d ", d)
                         print("")
+                        print("printing the full list e inside the loop after removing the commas in the numbers ", e)
                         print("There is a row in the database for that sector")
                         return render_template('Chart8.html', data6=json.dumps(e), country6=json.dumps(submit))
                     else:

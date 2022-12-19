@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!--taken from Bootstrap examples here: https://getbootstrap.com/docs/5.2/examples/dropdowns/-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.104.2">
+    <title>Top navbar example · Bootstrap v5.2</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/navbar-static/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dropdowns/">
+<!--amended below by adding the reference to it on the web-->
+    <link href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
+    <link href="../static/css/dropdowns.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    <link href="../static/css/navbar-top.css" rel="stylesheet">
+  </head>
+  <body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Earth Status</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{url_for('home')}}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+  <div class="bg-light p-5 rounded">
+<!--
+<div class="d-flex gap-5 justify-content-center">
+  <ul class="dropdown-menu position-static d-grid gap-1 p-2 rounded-3 mx-0 shadow w-220px">
+    <li><a class="dropdown-item rounded-2 active" href="#">Action</a></li>
+    <li><a class="dropdown-item rounded-2" href="#">Another action</a></li>
+    <li><a class="dropdown-item rounded-2" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item rounded-2" href="#">Separated link</a></li>
+  </ul>
+  <ul class="dropdown-menu dropdown-menu-dark position-static d-grid gap-1 p-2 rounded-3 mx-0 border-0 shadow w-220px">
+    <li><a class="dropdown-item rounded-2 active" href="#">Action</a></li>
+    <li><a class="dropdown-item rounded-2" href="#">Another action</a></li>
+    <li><a class="dropdown-item rounded-2" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item rounded-2" href="#">Separated link</a></li>
+  </ul>
+</div>
+--><!--
+<div class="b-example-divider"></div>-->
+<!--
+<div class="d-flex gap-5 justify-content-center">
+  <div class="dropdown-menu d-block position-static pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px">
+    <form class="p-2 mb-2 bg-light border-bottom">
+      <input type="search" class="form-control" autocomplete="true" placeholder="Type to filter...">
+    </form>
+    <ul class="list-unstyled mb-0">
+      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
+        <span class="d-inline-block bg-success rounded-circle p-1"></span>
+        Action
+      </a></li>
+      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
+        <span class="d-inline-block bg-primary rounded-circle p-1"></span>
+        Another action
+      </a></li>
+      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
+        <span class="d-inline-block bg-danger rounded-circle p-1"></span>
+        Something else here
+      </a></li>
+      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
+        <span class="d-inline-block bg-info rounded-circle p-1"></span>
+        Separated link
+      </a></li>
+    </ul>
+  </div>
+-->
+
+    <!--OPTION A NEED TO MAKE THIS DROPDOWNLIST POST TO THE ROUTE - Dropdowns which dropdown on hover but do not post - perhaps add a value and an onsubmit also like in the radio buttons
+  <div class="d-flex gap-5 justify-content-center" id="dropdownMacos2" style = "float: left; width:100%;">
+
+  <ul class="dropdown-menu dropdown-menu-macos mx-0 shadow" style="width: 300px;">
+    <li><p class="dropdown-item-main">Fuel Type</p></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST" >Coal</a></li>
+    <li><a class="dropdown-item" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST">Electricity</a></li>
+    <li><a class="dropdown-item" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST">Natural Gas</a></li>
+    <li><a class="dropdown-item" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST">Non-Renewable Waste</a></li>
+    <li><a class="dropdown-item" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST">Oil</a></li>
+    <li><a class="dropdown-item" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST">Peat</a></li>
+    <li><a class="dropdown-item" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST">Renewable</a></li>
+
+  </ul>
+</div>-->
+<!-- OPTION B - Dropdowns which does not drop on hover with a searchbar at the top - the search bar posts to the route  UNCOMMENT BELOW TO GET THAT BACK WORKING AGAIN>-->
+    <!--
+  <div class="dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px">
+    <form class="p-2 mb-2 bg-dark border-bottom border-dark" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST">
+      <input type="search" name="search4" class="form-control form-control-dark" autocomplete="true" placeholder="Enter a fuel type - Coal,Electricity, Natural Gas, Non-Renewable Waste, Oil, Peat, Renewables">
+<!- OPTION A  below does not link to the app route or send a query to the DB
+    <ul class="list-unstyled mb-0">
+      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST">
+        <span class="d-inline-block bg-success rounded-circle p-1"></span>
+        Coal
+      </a></li>
+      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
+        <span class="d-inline-block bg-primary rounded-circle p-1"></span>
+        Another Fueltype
+      </a></li>
+      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
+        <span class="d-inline-block bg-danger rounded-circle p-1"></span>
+        Something else here
+      </a></li>
+      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
+        <span class="d-inline-block bg-info rounded-circle p-1"></span>
+        Separated link
+      </a></li>
+    </ul>
+    </form>
+  </div>
+</div>-->
+    <!-- OPTION B  UNCOMMENT ABOVE TO GET THAT BACK WORKING AGAIN>-->
+
+    <!-- OPTION C - Checkboxes  UNCOMMENT BELOW TO GET THAT BACK WORKING AGAIN>-->
+<div class="dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px">
+    <form class="p-2 mb-2 bg-dark border-bottom border-dark" name="searchx" action="{{url_for('searchcarregbyengtypetable')}}" method="POST">
+
+    <form class="p-2 mb-2 bg-dark border-bottom border-dark" name="searchx" action="{{url_for('searchcarregbyengtypetable')}}" method="POST">
+  <input type="radio" id="carfueltype1" name="searchx" value="Electric" onChange="this.form.submit()">
+  <label for="carfueltype1"> Electric</label><br>
+  <input type="radio" id="carfueltype2" name="searchx" value="Diesel"  onChange="this.form.submit()">
+  <label for="carfueltype2"> Diesel</label><br>
+  <input type="radio" id="carfueltype3" name="searchx" value="Petrol"  onChange="this.form.submit()">
+  <label for="carfueltype3"> Petrol</label><br>
+  <input type="radio" id="carfueltype4" name="searchx" value="Petrol Electric Hybrid"  onChange="this.form.submit()">
+  <label for="carfueltype4"> Petrol Electric Hybrid</label><br>
+  <input type="radio" id="carfueltype5" name="searchx" value="Diesel Electric Hybrid"  onChange="this.form.submit()">
+  <label for="carfueltype5"> Diesel Electric Hybrid</label><br>
+
+  <input type="submit" value="Submit">
+</form>
+    </form>
+  </div>
+
+
+
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src="../static/js/Formcheck.js"></script>
+
+  </body>
+</html>

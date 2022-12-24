@@ -143,6 +143,25 @@ app = Flask(__name__, static_folder='static', template_folder='Templates')
 #    print("MainReview = ", row[7])
 #conn.close()
 
+@app.route('/autocomp')
+def autocomp():
+    with sqlite3.connect("C:\\Users\jarla\OneDrive\Desktop\TestDB.db") as conn:
+        cur = conn.cursor()
+        cur.execute("select Countryandarea from renewableenergydata")
+        row = cur.fetchall()
+        countries = []
+        z= []
+        for i in row:
+            countries.append(i)
+        print("This is the countries list", countries)
+        print("First item on the countries list", countries[0])
+        for j in countries:#(j = 0 j < countries.len j++):
+            k = j.replace("(", "" )
+            z.append(k)
+        print("Heres the row after removing the brackets",z)
+
+
+
 @app.route('/gittest')
 def gittest():
     return render_template("Gittest.html")

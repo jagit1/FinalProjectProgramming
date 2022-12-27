@@ -1,15 +1,16 @@
 .modal-sheet .modal-dialog {
-  width: 380px;
+  width: 450px;
   transition: bottom .75s ease-in-out;
+  height:75vh
 }
 .modal-sheet .modal-footer {
   padding-bottom: 2rem;
 }
 
 .modal-alert .modal-dialog {
-  width: 380px;
+  width: 450px;
 }
 
 .modal-tour .modal-dialog {
-  width: 380px;
+  width: 450px;
 }

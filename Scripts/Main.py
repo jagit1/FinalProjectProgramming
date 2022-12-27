@@ -203,14 +203,15 @@ def searchrenewableenergy():
                     msg2 = "There is a row in the database for that country"
                     return render_template('Chart2.html', data=json.dumps(a), country=json.dumps(submit))
                 else:
-                    ErrorMessage = "Passed all checks but No country found Please enter the details on the form"
+                    ErrorMessage = "No country found matching your entry. Please enter the details on the form, beginning with a capital letter and using the characters A-Z or a-z only!"
                     return render_template('ErrorPage.html' , ErrorMessage=ErrorMessage)
             #else:
             #    print("IsAlphaFalse Your input contains something other than letters")
             #    return render_template('ErrorPage.html', ErrorMessage="IsAlphaFalseEnter letters only")
         else:
             print("IsUpperFalseThe first letter is not a capital letter")
-            return render_template('ErrorPage.html', ErrorMessage="IsUpperFalseStart with a capital letter")
+            ErrorMessage = "No country found in database. Please search again!"
+            return render_template('ErrorPage.html', ErrorMessage=ErrorMessage)
 
 
 @app.route('/searchghg')

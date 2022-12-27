@@ -85,11 +85,11 @@
 
 <main class="container">
   <div class="bg-light p-5 rounded">
-    <h1>Greenhouse Gases - trend over time</h1>
-    <p class="lead">Search a country and see how many kilotons of CO2 were produced per year over the time span.</p>
+    <h1>Greenhouse Gases - emissions trend 1990 to 2020</h1>
+    <p class="lead">Search a country and see how many kilotons of CO2 were produced per year from 1990 to 2020.</p>
     <!--<a class="btn btn-lg btn-primary" href="#/docs/5.2/components/navbar/" role="button">Placeholder text &raquo;</a>-->
     <form class="d-flex" role="search" name ="form" , action="{{url_for('searchintghg')}}" method="POST">
-        <input id ="Search2" class="form-control me-2" name ="search2" type="search" placeholder="Enter Name of County beginning with a capital letter" aria-label="Search" required> <!--pattern="[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ]" OR pattern="/^[a-zA-Z]+$/"-->
+        <input id ="Search2" class="form-control me-2" name ="search2" type="search" placeholder="Enter the Name of County beginning with a capital letter" aria-label="Search" required> <!--pattern="[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ]" OR pattern="/^[a-zA-Z]+$/"-->
         <button class="btn btn-outline-success" name ="submit2"  onsubmit="{{url_for('searchintghg')}}" method="POST">Search</button>
     </form>
   </div>

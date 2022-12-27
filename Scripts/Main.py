@@ -288,16 +288,16 @@ def searchintghg():
                         print("There is a row in the database for that country")
                         return render_template('Chart3.html', data2=json.dumps(e), country2=json.dumps(submit))
                     else:
-                        ErrorMessage2 = "No matching country found in database Please use the button below to search again"
+                        ErrorMessage2 = "No matching country found in database. Please use the button below to search again"
                         return render_template('ErrorPage2.html' , ErrorMessage2=ErrorMessage2)
             else:
-                ErrorMessage2 = "Passed all checks but No country found Please enter the details on the form"
-                print("IsAlphaFalse Your input contains something other than letters")
-                return render_template('ErrorPage2.html', ErrorMessage2="IsAlphaFalseEnter letters only")
+                ErrorMessage2 = "No matching country found in database. Please use the button below to search again"
+                #print("IsAlphaFalse Your input contains something other than letters")
+                return render_template('ErrorPage2.html', ErrorMessage2=ErrorMessage2)
         else:
-            ErrorMessage2 = "Passed all checks but No country found Please enter the details on the form"
-            print("IsUpperFalseThe first letter is not a capital letter")
-            return render_template('ErrorPage2.html', ErrorMessage2="IsUpperFalseStart with a capital letter")
+            ErrorMessage2 = "No matching country found in database Please use the button below to search again"
+            #print("IsUpperFalseThe first letter is not a capital letter")
+            return render_template('ErrorPage2.html', ErrorMessage2=ErrorMessage2)
 
 @app.route('/searchintwaste')
 def searchintwaste():
@@ -373,14 +373,16 @@ def searchintwastetable():
                         print("There is a row in the database for that country")
                         return render_template('Chart5.html', data3=json.dumps(c), country3=json.dumps(submit))
                     else:
-                        ErrorMessage = "Passed all checks but No country found Please enter the details on the form"
-                        return render_template('ErrorPage.html' , ErrorMessage=ErrorMessage)
+                        ErrorMessage3 = "No matching country found in database Please use the button below to search again"
+                        return render_template('ErrorPage3.html' , ErrorMessage3=ErrorMessage3)
             else:
+                ErrorMessage3 = "No matching country found in database Please use the button below to search again"
                 print("IsAlphaFalse Your input contains something other than letters")
-                return render_template('ErrorPage.html', ErrorMessage="IsAlphaFalseEnter letters only")
+                return render_template('ErrorPage3.html', ErrorMessage3=ErrorMessage3)
         else:
+            ErrorMessage3 = "No matching country found in database Please use the button below to search again"
             print("IsUpperFalseThe first letter is not a capital letter")
-            return render_template('ErrorPage.html', ErrorMessage="IsUpperFalseStart with a capital letter")
+            return render_template('ErrorPage3.html', ErrorMessage3=ErrorMessage3)
 
 @app.route('/searchirishenergy')
 def searchirishenergy():

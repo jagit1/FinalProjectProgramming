@@ -114,15 +114,13 @@
   </div>
 </header>
 -->
-<div class="container-fluid">
-  <div class="row">
+<div id= "chart1div" class="container-fluid" style = "fill: #228B22";>
+  <div class="row" style = "background-colour: #228B22";>
 
-
-  </div>
-<div style="width: 80vw; height: 60vh; float:left; align: center; margin-left: 150px; display: flex">
-      <canvas  class="my-4 w-100 chartjs-render-monitor" id="myChart" width="1144" height="482" style="display: block; height: 150px; width: 500px; align: center;"></canvas>
+<div style="margin-left: 10vw; width: 80vw; height: 70vh; float:left; align: center; display: flex; position: relative; border: 10px; background-colour: #228B22;">
+      <canvas  class="my-4 w-100 chartjs-render-monitor" id="myChart" width="1144" height="482" style="margin: 0 auto;  height: 45vh; width: 55vw; align: center;"></canvas>
 </div>
-
+  </div>
 
   </div>
 
@@ -145,29 +143,56 @@
     type: 'line',
     data: {
       labels: ['1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017',],
+
       datasets: [{
-        label: 'Proportion of Electricity From Renewable Sources for Your Chosen Country',
+        label: 'Proportion of Gross Electrical Production Derived From Renewable Sources, Trend 1990 to 2017',
         data: newdata,
-        borderWidth: 2,
-        borderColor: '#36A2EB',
-        backgroundColor: '#9BD0F5',
+        borderWidth: 1,
+        borderColor: '#228B22',
+        backgroundColor: '#228B22',
       }]
     },
     options: {
+      animations: {
+      tension: {
+        duration: 1000,
+        easing: 'linear',
+        from: 1,
+        to: 0,
+        loop: false
+      }
+    },
+    interaction: {
+    intersect: false,
+    mode: 'index'
+
+    },
       scales: {
         y: {    type: 'linear',
                 min: 0,
                 max: 100
-            }
             },
+        y:  {
+        title:{
+                display: true,
+                text: "Percentage of Total Electrical Production Derived from Renewable Origin",
+                align: "center",
+                font: {weight: 'bold',
+                       size: 11},
+              },
+        },
+
+        },
       plugins: {
         legend:{
             display: true,
         },
-        subtitle: {
-                display: false,
-                text: 'Custom Chart Subtitle'
 
+        subtitle: {
+                display: true,
+                text: newcountry,
+                font: {weight: 'bold',
+                       size: 16},
             }
       },
     }

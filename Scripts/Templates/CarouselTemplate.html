@@ -7,10 +7,10 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.104.2">
     <title>Carousel Template · Bootstrap v5.2</title>
-
+    <link href="../static/css/navbartop.css" rel="stylesheet">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
-
-    <link href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
+   <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">-->
 
     <style>
       .bd-placeholder-img {
@@ -67,14 +67,15 @@
     <!-- Custom styles for this template -->
     <link href="../static/css/carousel.css" rel="stylesheet">
     <link href="../static/css/dropdowns.css" rel="stylesheet">
+     <link href="../static/css/navbartop.css" rel="stylesheet">
   </head>
 
   <body>
 
 <header>
 
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="container-fluid">
+  <nav id = "mainnav" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid"> <!--style="background-color: #49be25;"-->
       <a class="navbar-brand" href="#">Earth Status</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -181,7 +182,7 @@
     <li><hr class="dropdown-divider"></li>
 
     <li><a class="dropdown-item" href="{{ url_for('searchcarregbyengtype') }}">Cars Registered By Engine Type</a></li>
-    <li><a class="dropdown-item" href="{{ url_for('searchirishenergy') }}">Sources of Energy by Fueltype</a></li>
+    <li><a class="dropdown-item" href="{{ url_for('searchirishenergy') }}">Sources of Energy by Fuel Type</a></li>
     <li><a class="dropdown-item" href="{{ url_for('searchirishenergybysector') }}">Sources of Energy by Sector</a></li>
   </ul>
 </div>

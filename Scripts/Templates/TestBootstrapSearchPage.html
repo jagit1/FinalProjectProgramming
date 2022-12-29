@@ -118,7 +118,7 @@
    <!--<link href="{{ url_for('static', filename='css/headers.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/heroes.css') }}" rel="stylesheet">-->
   </head>
-  <body>
+  <body style ="background-color: #CAF3FE;">
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
   <div class="container-fluid">
@@ -144,13 +144,13 @@
 </nav>
 
 
-<main class="container">
-  <div class="bg-light p-5 rounded">
+<main class="container" >
+  <div class="bg-light p-5 rounded" >
     <h1>Proportion of Electricity from Renewable Sources</h1>
     <p class="lead">Search a country and see its progress in switching to renewable sources of energy from 1990 to 2017.</p>
     <!--<a class="btn btn-lg btn-primary" href="#/docs/5.2/components/navbar/" role="button">Placeholder text &raquo;</a>-->
     <form autocomplete="off" class="d-flex" role="search" name ="form" , action="{{url_for('searchrenewableenergy')}}" method="POST">
-      <div class="autocomplete" style="width:80vw;">
+      <div class="autocomplete" style="width:80vw;" >
         <input id ="Search1" class="form-control me-2" name ="search" type="search" placeholder="Enter Name of County beginning with a capital letter" aria-label="Search" required> <!--pattern="[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ]" OR pattern="/^[a-zA-Z]+$/"-->
       </div>
         <button class="btn btn-outline-success" name ="submit"  onsubmit="{{url_for('searchrenewableenergy')}}" method="POST">Search</button>

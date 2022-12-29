@@ -122,11 +122,11 @@
       data: {
         labels: ['1990', '1995', '2000', '2005', '2010', '2015', '2020', '2021'],
         datasets: [{
-        label: 'Kilotons of energy of that fuel type per year over the time period for Your Chosen Fuel Type',
+        label: 'Kilotons of energy generated from your Chosen Fuel Type, Trend 1990 to 2021',
         data: newdata4,
         borderWidth: 2,
-        borderColor: '#36A2EB',
-        backgroundColor: '#9BD0F5',
+        borderColor: '#228B22',
+        backgroundColor: '#228B22',
       }]
       },
 
@@ -139,17 +139,35 @@
                  display: true,
                  suggestedMax: 100,
                  suggestedMin: 0
-
-                 }
+                 },
+          y: {
+              title:{
+                  display: true,
+                  text: "Kilotons of Energy Generated",
+                  align: "center",
+                  font: {weight: 'bold',
+                       size: 12},
+                    },
               },
+          x: {
+              title:{
+                  display: true,
+                  text: "Year",
+                  align: "center",
+                  font: {weight: 'bold',
+                       size: 12},
+                    },
+              },
+          },
 
         plugins: {
           legend:{
               display: true,
           },
           subtitle: {
-                  display: false,
-                  text: 'Custom Chart Subtitle'
+                  display: true,
+                  text: "Fuel Type: " + newcountry4,
+                  font: {weight: 'bold'},
               }
          },
       }

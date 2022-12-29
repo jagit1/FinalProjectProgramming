@@ -125,8 +125,8 @@
         label: 'Kilotons of energy used by that sector per year over the time period for Your Chosen Sector',
         data: newdata5,
         borderWidth: 2,
-        borderColor: '#36A2EB',
-        backgroundColor: '#9BD0F5',
+        borderColor: '#228B22',
+        backgroundColor: '#228B22',
       }]
       },
 
@@ -140,16 +140,36 @@
                  suggestedMax: 100,
                  suggestedMin: 0
 
-                 }
+                 },
+
+          y: {
+              title:{
+                  display: true,
+                  text: "Kilotons of Energy Used by Your Chosen Sector",
+                  align: "center",
+                  font: {weight: 'bold',
+                       size: 12},
+                    },
               },
+          x: {
+              title:{
+                  display: true,
+                  text: "Year",
+                  align: "center",
+                  font: {weight: 'bold',
+                       size: 12},
+                    },
+              },
+          },
 
         plugins: {
           legend:{
               display: true,
           },
           subtitle: {
-                  display: false,
-                  text: 'Custom Chart Subtitle'
+                  display: true,
+                  text: "Sector: " + newcountry5,
+                  font: {weight: 'bold'},
               }
          },
       }

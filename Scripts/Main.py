@@ -435,7 +435,6 @@ def searchirishenergytable():
 
 
 @app.route("/searchirishenergytableall", methods=["POST", "GET"])
-##this works to check if the country is on the list and returns its graph of the trend over time of the greenhouse gas emmissions
 def searchirishenergytableall():
     if request.method == "POST":
         print("Request sent from HTMl template")

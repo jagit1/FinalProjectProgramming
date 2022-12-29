@@ -1,3 +1,4 @@
+<!--Code from here: https://www.w3schools.com/js/js_graphics_chartjs.asp-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -111,36 +112,67 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <script>
-    const ctx9 = document.getElementById('myChart9');
-    var data1 = [843,317,398,511,382,354,272,275];
-    var newchart10 = new Chart(ctx9, {
-      type: 'bar',
-      data: {
-        labels: ['1990', '1995', '2000', '2005', '2010', '2015', '2020', '2021'],
-        datasets: [{
-        label: 'Coal',
-        data: data1,
-        borderColor: '#228B22',
-        backgroundColor: '#228B22',
-    },
-      }]
-      },
-      options: {
-        scales: {
+    var xValues = [1990,1995,2000,2005, 2010, 2015, 2020, 2021];
+
+new Chart("myChart9", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      data: [843,317,398,5111,382,354,272,275],
+      borderColor: "red",
+      label: "Coal",
+      fill: false
+    }, {
+      data: [1298,1630,2275,2883,3085,3193,3635, 3776],
+      borderColor: "green",
+      label: "Electricity",
+      fill: false,
+    }, {
+      data: [664,974,1496,1638,1889,2030,2309,2286],
+      borderColor: "blue",
+      label: "Natural Gas",
+      fill: false
+
+    }, {
+      data: [0,0,0,0,9,44,54,54],
+      borderColor: "yellow",
+      label: "Non Renewable Waste",
+      fill: false
+
+    }, {
+      data: [4767,5738,7731,8846,7643,6901,6208,6404],
+      borderColor: "orange",
+      label: "Oil",
+      fill: false
+
+    }, {
+      data: [789,617,307,274,254,201,189,180],
+      borderColor: "purple",
+      label: "Peat",
+      fill: false
+
+    }, {
+      data: [108,92,118,192,332,433,521,545],
+      borderColor: "pink",
+      label: "Renewables",
+      fill: false
+
+
+    }]
+  },
+  options: {
+  scales: {
+
           y: {
-                 type: 'linear',
-                 display: true,
-                 suggestedMax: 100,
-                 suggestedMin: 0
-                 },
-          y: {
-                  title:{
+              title:{
                   display: true,
-                  text: "Kilotons of Energy Generated from various fuel types",
+                  text: "Kilotons of Energy Generated ",
                   align: "center",
-
+                  font: {weight: 'bold',
+                       size: 12},
+                    },
               },
-
           x: {
               title:{
                   display: true,
@@ -152,19 +184,15 @@
               },
           },
 
-        plugins: {
-          legend:{
-              display: true,
-          },
-          subtitle: {
-                  display: true,
-                  font: {weight: 'bold'},
-              },
-         },
-      },
-    });
-    chart.render()
 
+    legend: {display: true}
+  },
+  subtitle: {
+                  display: true,
+                  text: "All Fuel Types",
+                  font: {weight: 'bold'},
+              }
+});
   </script>
   </body>
 </html>

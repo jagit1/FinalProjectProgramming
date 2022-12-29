@@ -115,46 +115,53 @@
     var xValues = [1990,1995,2000,2005, 2010, 2015, 2020, 2021];
 
 new Chart("myChart9", {
-  type: "line",
+  type: "bar",
   data: {
     labels: xValues,
     datasets: [{
       data: [843,317,398,5111,382,354,272,275],
       borderColor: "red",
+      backgroundColor: "red",
       label: "Coal",
       fill: false
     }, {
       data: [1298,1630,2275,2883,3085,3193,3635, 3776],
       borderColor: "green",
+      backgroundColor: "green",
       label: "Electricity",
       fill: false,
     }, {
       data: [664,974,1496,1638,1889,2030,2309,2286],
       borderColor: "blue",
+      backgroundColor: "blue",
       label: "Natural Gas",
       fill: false
 
     }, {
       data: [0,0,0,0,9,44,54,54],
       borderColor: "yellow",
+      backgroundColor: "yellow",
       label: "Non Renewable Waste",
       fill: false
 
     }, {
       data: [4767,5738,7731,8846,7643,6901,6208,6404],
       borderColor: "orange",
+      backgroundColor: "orange",
       label: "Oil",
       fill: false
 
     }, {
       data: [789,617,307,274,254,201,189,180],
       borderColor: "purple",
+      backgroundColor: "purple",
       label: "Peat",
       fill: false
 
     }, {
       data: [108,92,118,192,332,433,521,545],
       borderColor: "pink",
+      backgroundColor: "pink",
       label: "Renewables",
       fill: false
 

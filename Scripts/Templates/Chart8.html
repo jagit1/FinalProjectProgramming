@@ -118,7 +118,7 @@
     let newcountry6 = JSON.parse({{ country6 | tojson}});
 
     var newchart6 = new Chart(ctx6, {
-      type: 'line',
+      type: 'bar',
       data: {
         labels: ['2007', '2010', '2013', '2016', '2019', '2021'],
         datasets: [{
@@ -142,7 +142,8 @@
               title:{
                   display: true,
                   text: "Number of Cars Registered of the Engine Type selected",
-                  align: "center"
+                  align: "center",
+
                     },
               },
           x: {

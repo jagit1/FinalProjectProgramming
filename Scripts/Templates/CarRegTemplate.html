@@ -64,10 +64,10 @@
 
     <link href="../static/css/navbar-top.css" rel="stylesheet">
   </head>
-  <body>
+  <body style ="background-color: #4C9567;">
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-  <div class="container-fluid">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4" >
+  <div class="container-fluid" >
     <a class="navbar-brand" href="#">Earth Status</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -85,8 +85,8 @@
   </div>
 </nav>
 
-<main class="container">
-  <div class="bg-light p-5 rounded">
+<main class="container" style ="background-color: #228B22;">
+  <!--<div class="bg-light p-5 rounded" style ="background-color: #228B22;">-->
 <!--
 <div class="d-flex gap-5 justify-content-center">
   <ul class="dropdown-menu position-static d-grid gap-1 p-2 rounded-3 mx-0 shadow w-220px">
@@ -179,13 +179,13 @@
     <!-- OPTION B  UNCOMMENT ABOVE TO GET THAT BACK WORKING AGAIN>-->
 
     <!-- OPTION C - Checkboxes  UNCOMMENT BELOW TO GET THAT BACK WORKING AGAIN>-->
-<div class="dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px">
-  <p>Select an Engine type below to see the trend in passenger cars registered between 2007 and 2021</p>
-    <form class="p-2 mb-2 bg-dark border-bottom border-dark" name="searchx" action="{{url_for('searchcarregbyengtypetable')}}" method="POST">
+<div class="dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px" style ="background-color: #ffffff;">
+  <p style ="color: #000000;">Select an Engine type below to see the trend in passenger cars registered between 2007 and 2021</p>
+    <form class="p-2 mb-2 bg-dark border-bottom border-dark" name="searchx" action="{{url_for('searchcarregbyengtypetable')}}" method="POST" >
 
     <form class="p-2 mb-2 bg-dark border-bottom border-dark" name="searchx" action="{{url_for('searchcarregbyengtypetable')}}" method="POST">
   <input type="radio" id="carfueltype1" name="searchx" value="Electric" onChange="this.form.submit()">
-  <label for="carfueltype1"> Electric</label><br>
+  <label for="carfueltype1" > Electric</label ><br>
   <input type="radio" id="carfueltype2" name="searchx" value="Diesel"  onChange="this.form.submit()">
   <label for="carfueltype2"> Diesel</label><br>
   <input type="radio" id="carfueltype3" name="searchx" value="Petrol"  onChange="this.form.submit()">

@@ -122,11 +122,11 @@
       data: {
         labels: ['2007', '2010', '2013', '2016', '2019', '2021'],
         datasets: [{
-        label: 'Passenger Cars Registered based on Engine Type',
+        label: 'Passenger Cars Registered in Ireland based on Engine Type, Trend 2007 to 2021',
         data: newdata6,
         borderWidth: 2,
-        borderColor: '#36A2EB',
-        backgroundColor: '#9BD0F5',
+        borderColor: '#228B22',
+        backgroundColor: '#228B22',
       }]
       },
 
@@ -137,19 +137,23 @@
           y: {
                  type: 'linear',
                  display: true,
-                 suggestedMax: 100,
-                 suggestedMin: 0
-
-                 }
+                 },
+          y: {
+              title:{
+                  display: true,
+                  text: "Number of Cars Registered of the Engine Type selected",
+                  align: "center"
+                    },
               },
+                  },
 
         plugins: {
           legend:{
               display: true,
           },
           subtitle: {
-                  display: false,
-                  text: 'Custom Chart Subtitle'
+                  display: true,
+                  text: "Engine Type: " + newcountry6
               }
          },
       }

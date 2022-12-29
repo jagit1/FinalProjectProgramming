@@ -122,11 +122,11 @@
       data: {
         labels: ['1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
         datasets: [{
-        label: 'Greenhouse Gases produced in the time period for Your Chosen Country',
+        label: 'Greenhouse Gases produced annually from 1990 to 2020 by your selected country (kilotons CO2 equivalent): ' + newcountry2,
         data: newdata2,
         borderWidth: 2,
-        borderColor: '#36A2EB',
-        backgroundColor: '#9BD0F5',
+        borderColor: '#228B22',
+        backgroundColor: '#228B22',
       }]
       },
 
@@ -140,16 +140,36 @@
                  suggestedMax: 100,
                  suggestedMin: 0
 
-                 }
+                 },
+          y:  {
+        title:{
+                display: true,
+                text: "Kilotons CO2 equivalent Produced by " + newcountry2,
+                align: "center",
+                font: {weight: 'bold',
+                       size: 12},
               },
+        },
+        x: {
+              title:{
+                  display: true,
+                  text: "Year",
+                  align: "center",
+                  font: {weight: 'bold',
+                       size: 14},
+                    },
+              },
+        },
 
         plugins: {
           legend:{
               display: true,
           },
           subtitle: {
-                  display: false,
-                  text: 'Custom Chart Subtitle'
+                  display: true,
+                  text: "Country Selected: " + newcountry2,
+                  font: {weight: 'bold',
+                       size: 16},
               }
          },
       }

@@ -433,6 +433,14 @@ def searchirishenergytable():
             print("IsUpperFalseThe first letter is not a capital letter")
             return render_template('ErrorPage.html', ErrorMessage="IsUpperFalseStart with a capital letter")
 
+
+@app.route("/searchirishenergytableall", methods=["POST", "GET"])
+##this works to check if the country is on the list and returns its graph of the trend over time of the greenhouse gas emmissions
+def searchirishenergytableall():
+    if request.method == "POST":
+        print("Request sent from HTMl template")
+        return render_template("Chart9.html")
+
 @app.route('/searchirishenergybysector')
 def searchirishenergybysector():
     return render_template("IrishEnergyTemplate3.html")
@@ -480,6 +488,8 @@ def searchirishenergybysectortable():
         else:
             print("IsUpperFalseThe first letter is not a capital letter")
             return render_template('ErrorPage.html', ErrorMessage="IsUpperFalseStart with a capital letter")
+
+
 
 
 @app.route('/searchcarregbyengtype')

@@ -203,6 +203,15 @@
     </form>
   </div>
 
+  <div class="dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px" style = "background-color: #ffffff">
+  <p style ="color: #000000; text-align: center;">Compare trends in energy consumption for all sectors, trend from 1990 to 2021 </p>
+  <form class="p-2 mb-2 bg-dark border-bottom border-dark" name="allsectorgraphform" action="{{url_for('searchirishenergysectorall')}}" method="POST">
+  <input type="radio" id="allsectorgraphform" name="allsectorgraphform" value="allsectorgraphform" onChange="this.form.submit()">
+  <label for="allsectorgraphform"> Show trend in energy consumption in all sectors above on one graph</label><br>
+  </form>
+
+  </div>
+
     <!-- OPTION C - Checkboxes  UNCOMMENT ABOVE TO GET THAT BACK WORKING AGAIN>-->
 
   </div>

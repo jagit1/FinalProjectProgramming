@@ -1,0 +1,200 @@
+<!--Code from here: https://www.w3schools.com/js/js_graphics_chartjs.asp-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.104.2">
+    <title>Dashboard Template · Bootstrap v5.2</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/">
+
+<link href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/dashboard2.css" rel="stylesheet">
+  </head>
+  <body>
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Earth Status</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url_for('searchirishenergybysector') }}">Search Again?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+
+  </div>
+<div style="width: 80vw; height: 60vh; float:left; align: center; margin-left: 150px; display: flex">
+      <canvas  class="my-4 w-100 chartjs-render-monitor" id="myChart16" width="1144" height="482" style="display: block; height: 150px; width: 500px; align: center;">Canvas</canvas>
+</div>
+
+  </div>
+
+  <script src="https://getbootstrap.com/docs/5.2/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"  crossorigin="anonymous"></script>
+  <script src="../static/js/dashboard2.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.js"  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.min.js"  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    var valValues = [1990,1995,2000,2005, 2010, 2015, 2020, 2021];
+
+new Chart("myChart16", {
+  type: "line",
+  data: {
+    labels: valValues,
+    datasets: [{
+      data: [561,782,707,766,589,441,500,503],
+      borderColor: "red",
+      backgroundColor: "red",
+      label: "Agricultural and Fisheries",
+      fill: false
+    }, {
+      data: [1019,1184,1409,1752,1874,2122,2440, 2562],
+      borderColor: "green",
+      backgroundColor: "green",
+      label: "Commercial Services",
+      fill: false,
+    }, {
+      data: [1754,1956,2470,2486,1941,2044,2170,2209],
+      borderColor: "blue",
+      backgroundColor: "blue",
+      label: "Industry",
+      fill: false
+
+    }, {
+      data: [859,815,906,958,954,918,1039,1026],
+      borderColor: "yellow",
+      backgroundColor: "yellow",
+      label: "Public Services",
+      fill: false
+
+    }, {
+      data: [2258,2261,2730,3298,3636,2844,3203,3066],
+      borderColor: "orange",
+      backgroundColor: "orange",
+      label: "Residential",
+      fill: false
+
+    }, {
+      data: [2019,2372,4103,5084,4599,4786,3836,4155],
+      borderColor: "purple",
+      backgroundColor: "purple",
+      label: "Transport",
+      fill: false
+
+    },
+
+
+    }]
+  },
+  options: {
+  scales: {
+
+          y: {
+              title:{
+                  display: true,
+                  text: "Kilotons of Energy Used ",
+                  align: "center",
+                  font: {weight: 'bold',
+                       size: 12},
+                    },
+              },
+          x: {
+              title:{
+                  display: true,
+                  text: "Year",
+                  align: "center",
+                  font: {weight: 'bold',
+                       size: 12},
+                    },
+              },
+          },
+
+
+    legend: {display: true}
+  },
+  subtitle: {
+                  display: true,
+                  text: "All Sectors",
+                  font: {weight: 'bold'},
+              }
+});
+  </script>
+  </body>
+</html>

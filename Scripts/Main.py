@@ -488,7 +488,11 @@ def searchirishenergybysectortable():
             print("IsUpperFalseThe first letter is not a capital letter")
             return render_template('ErrorPage.html', ErrorMessage="IsUpperFalseStart with a capital letter")
 
-
+@app.route("/searchirishenergysectorall", methods=["POST", "GET"])
+def searchirishenergysectorall():
+    if request.method == "POST":
+        print("Request sent from HTMl template")
+        return render_template("Chart16.html")
 
 
 @app.route('/searchcarregbyengtype')

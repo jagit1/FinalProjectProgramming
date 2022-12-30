@@ -492,7 +492,7 @@ def searchirishenergybysectortable():
 def searchirishenergysectorall():
     if request.method == "POST":
         print("Request sent from HTMl template")
-        return render_template("Chart16.html")
+    return render_template("Chart16.html")
 
 
 @app.route('/searchcarregbyengtype')

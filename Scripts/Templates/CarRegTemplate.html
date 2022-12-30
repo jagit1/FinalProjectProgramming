@@ -201,6 +201,28 @@
     </form>
   </div>
 
+  <div class="dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px" style = "background-color: #ffffff">
+  <p style ="color: #000000; text-align: center;">Select a year below to see a comparison of Engine type in Passenger Cars Registered in Ireland in that year</p>
+    <form class="p-2 mb-2 bg-dark border-bottom border-dark" name="yearoptionx" action="{{url_for('searchcarregbyengtypetable2')}}" method="POST" >
+
+    <form class="p-2 mb-2 bg-dark border-bottom border-dark" name="yearoptionx" action="{{url_for('searchcarregbyengtypetable2')}}" method="POST">
+  <input type="radio" id="yearoption1" name="yearoptionx" value="yearoption1"  onChange="this.form.submit()">
+  <label for="yearoption1" > 2007</label ><br>
+  <input type="radio" id="yearoption2" name="yearoptionx" value="yearoption2"   onChange="this.form.submit()">
+  <label for="yearoption2"> 2010</label><br>
+  <input type="radio" id="yearoption3" name="yearoptionx" value="yearoption3"   onChange="this.form.submit()">
+  <label for="yearoption3"> 2013</label><br>
+  <input type="radio" id="yearoption4" name="yearoptionx" value="yearoption4"   onChange="this.form.submit()">
+  <label for="yearoption4"> 2016</label><br>
+  <input type="radio" id="yearoption5" name="yearoptionx" value="yearoption5"   onChange="this.form.submit()">
+  <label for="yearoption5"> 2019</label><br>
+  <input type="radio" id="yearoption6" name="yearoptionx" value="yearoption6"   onChange="this.form.submit()">
+  <label for="yearoption6"> 2021</label><br>
+
+</form>
+    </form>
+  </div>
+
 
 
   </div>

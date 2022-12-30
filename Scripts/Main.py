@@ -542,6 +542,85 @@ def searchcarregbyengtypetable():
             print("IsUpperFalseThe first letter is not a capital letter")
             return render_template('ErrorPage.html', ErrorMessage="IsUpperFalseStart with a capital letter")
 
+@app.route("/searchcarregbyengtypetable2", methods=["POST", "GET"])
+##this works to check if the country is on the list and returns its graph of the trend over time of the greenhouse gas emmissions
+def searchcarregbyengtypetable2():
+    if request.method == "POST":
+        submit = request.form["yearoptionx"]
+        print("Here's what you entered",submit)
+
+        if submit == 'yearoption1':
+            print("This is what you entered 1: ", submit)
+            return render_template('Chart10.html')
+
+        elif submit == "yearoption2":
+            print("This is what you entered 2: ", submit)
+            return render_template('Chart11.html')
+
+        elif submit == "yearoption3":
+            print("This is what you entered 3: ", submit)
+            return render_template('Chart12.html')
+
+        elif submit == "yearoption4":
+            print("This is what you entered 4: ", submit)
+            return render_template('Chart13.html')
+
+        elif submit == "yearoption5":
+            print("This is what you entered 5: ", submit)
+            return render_template('Chart14.html')
+
+        elif submit == "yearoption6":
+            print("This is what you entered 6: ", submit)
+            return render_template('Chart15.html')
+
+        else:
+            return render_template('ErrorPage.html')
+
+
+
+
+        # checking the first letter is a capital as that is the format of the data in the table
+        #if (submit[0].isupper()):
+        #    print("The first letter is a capital letter")
+            # checking that only letters and spaces are used as that is the format of the data in the table
+        #    if all(char.isalpha() or char.isspace() for char in submit):
+        #        print("Your input is a string of letters or spaces")
+
+        #        with sqlite3.connect("C:\\Users\jarla\OneDrive\Desktop\TestDB.db") as conn:
+        #            cur = conn.cursor()
+        #            cur.execute("select * from Fileforcarenginetype where 2007 = '%s'" % submit)
+        #            row = cur.fetchone()
+        #            if row:
+        #                print("")
+        #                print("printing the full row inside the loop ", row)
+        #                c = []
+        #                d = [2007, 2010, 2013, 2016, 2019, 2021]
+        #                e = []
+        #                f = []
+        #                for i in row:
+        #                    c.append(i)
+        #                c.pop(0)
+        #                print("")
+        #                print("printing the full list c inside the loop after popping the first element ", c)
+        #                for j in c:
+        #                    e.append(float(j.replace(',', '')))
+        #                print("")
+        #                print("This is subset d ", d)
+        #                print("")
+        #                print("printing the full list e inside the loop after removing the commas in the numbers ", e)
+        #                print("There is a row in the database for that sector")
+        return render_template('Chart10.html')
+        #            else:
+        #                ErrorMessage = "Passed all checks but No sector found Please return to the previous page and select an option"
+        #                return render_template('ErrorPage.html', ErrorMessage=ErrorMessage)
+        #    else:
+        #        print("IsAlphaFalse Your input contains something other than letters")
+        #        return render_template('ErrorPage.html', ErrorMessage="IsAlphaFalseEnter letters only")
+        #else:
+        #    print("IsUpperFalseThe first letter is not a capital letter")
+        #    return render_template('ErrorPage.html', ErrorMessage="IsUpperFalseStart with a capital letter")
+
+
 
 #Below from here also  - used to show what's entered through the form and the connection to the database - info going in to the database,
 #https://www.tutorialspoint.com/flask/flask_sqlite.htm

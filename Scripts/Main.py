@@ -73,39 +73,6 @@ cur = conn.cursor()
 conn.close()
 
 app = Flask(__name__, static_folder='static', template_folder='Templates')
-#@app.route("/searchrenewableenergytable", methods=["POST", "GET"])
-
-#def searchrenewableenergy():
-#    msg = 'msg'
-#    email = request.form["email"]
-#    firstname = request.form["firstname"]
-#    surname = request.form["surname"]
-#    password = request.form["password"]
-#    landlord = request.form["landlord"]
-#    tenant = request.form["tenant"]
-    #try:
-#    if request.method == "POST" and 'email' in request.form and 'firstname' in request.form and 'surname' in request.form and 'password' in request.form and 'landlord' in request.form and 'tenant' in request.form:
-#        with sqlite3.connect("useraccount.db") as conn:
-#            cur = conn.cursor()
-#            cur.execute("select email from Users where email='%s'" % email)
-
-#            if cur.fetchone():
-#                msg2 = "There is already an account using that email address"
-#                return render_template('Messages2.html', msg2=msg2)
-
-#            else:
-#                with sqlite3.connect("useraccount.db") as conn:
-#                    cur = conn.cursor()
-#                    cur.execute("INSERT into Users (email, firstname, surname, password, landlord, tenant) VALUES (?,?,?,?,?,?)", (email, firstname, surname, password, landlord, tenant))
-#                    conn.commit()
-
-#                    msg = "Account successfully Added"
-#                return render_template("Messages1.html", msg=msg)
-
-#    else:
-#        msg3 = "Please enter the details on the form"
-#        return render_template('Messages3.html', msg3=msg3)
-
 
 #Code on this file heavily influenced by slides 29 to 33 from SQl Powerpoint class, also below sources
 #https://www.geeksforgeeks.org/login-and-registration-project-using-flask-and-mysql/?ref=gcse

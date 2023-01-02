@@ -127,8 +127,6 @@ def autocomp():
             z.append(k)
         print("Heres the row after removing the brackets",z)
 
-
-
 @app.route('/gittest')
 def gittest():
     return render_template("Gittest.html")

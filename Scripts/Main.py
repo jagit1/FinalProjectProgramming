@@ -168,14 +168,14 @@ def searchrenewableenergy():
                     msg2 = "There is a row in the database for that country"
                     return render_template('Chart2.html', data=json.dumps(a), country=json.dumps(submit))
                 else:
-                    ErrorMessage = "No country found matching your entry. Please enter the details on the form, beginning with a capital letter and using the characters A-Z or a-z only!"
+                    ErrorMessage = "No matching country found in database Please use the button below to search again Enter a country name on the form, beginning with a capital letter and using the characters A-Z or a-z only!"
                     return render_template('ErrorPage.html' , ErrorMessage=ErrorMessage)
             #else:
             #    print("IsAlphaFalse Your input contains something other than letters")
             #    return render_template('ErrorPage.html', ErrorMessage="IsAlphaFalseEnter letters only")
         else:
             print("IsUpperFalseThe first letter is not a capital letter")
-            ErrorMessage = "No country found in database. Please search again!"
+            ErrorMessage = "No matching country found in database. Please use the button below to search again. Enter a country name on the form, beginning with a capital letter and using the characters A-Z or a-z only!"
             return render_template('ErrorPage.html', ErrorMessage=ErrorMessage)
 
 
@@ -253,14 +253,14 @@ def searchintghg():
                         print("There is a row in the database for that country")
                         return render_template('Chart3.html', data2=json.dumps(e), country2=json.dumps(submit))
                     else:
-                        ErrorMessage2 = "No matching country found in database. Please use the button below to search again"
+                        ErrorMessage2 = "No matching country found in database. Please use the button below to search again. Enter a country name on the form, beginning with a capital letter and using the characters A-Z or a-z only!"
                         return render_template('ErrorPage2.html' , ErrorMessage2=ErrorMessage2)
             else:
-                ErrorMessage2 = "No matching country found in database. Please use the button below to search again"
+                ErrorMessage2 = "No matching country found in database. Please use the button below to search again. Enter a country name on the form, beginning with a capital letter and using the characters A-Z or a-z only!"
                 #print("IsAlphaFalse Your input contains something other than letters")
                 return render_template('ErrorPage2.html', ErrorMessage2=ErrorMessage2)
         else:
-            ErrorMessage2 = "No matching country found in database Please use the button below to search again"
+            ErrorMessage2 = "No matching country found in database. Please use the button below to search again Enter a country name on the form, beginning with a capital letter and using the characters A-Z or a-z only!"
             #print("IsUpperFalseThe first letter is not a capital letter")
             return render_template('ErrorPage2.html', ErrorMessage2=ErrorMessage2)
 
@@ -338,14 +338,14 @@ def searchintwastetable():
                         print("There is a row in the database for that country")
                         return render_template('Chart5.html', data3=json.dumps(c), country3=json.dumps(submit))
                     else:
-                        ErrorMessage3 = "No matching country found in database Please use the button below to search again"
+                        ErrorMessage3 = "No matching country found in database. Please use the button below to search again Enter a country name on the form, beginning with a capital letter and using the characters A-Z or a-z only!"
                         return render_template('ErrorPage3.html' , ErrorMessage3=ErrorMessage3)
             else:
-                ErrorMessage3 = "No matching country found in database Please use the button below to search again"
+                ErrorMessage3 = "No matching country found in database. Please use the button below to search again. Enter a country name on the form, beginning with a capital letter and using the characters A-Z or a-z only!"
                 print("IsAlphaFalse Your input contains something other than letters")
                 return render_template('ErrorPage3.html', ErrorMessage3=ErrorMessage3)
         else:
-            ErrorMessage3 = "No matching country found in database Please use the button below to search again"
+            ErrorMessage3 = "No matching country found in database. Please use the button below to search again. Enter a country name on the form, beginning with a capital letter and using the characters A-Z or a-z only!"
             print("IsUpperFalseThe first letter is not a capital letter")
             return render_template('ErrorPage3.html', ErrorMessage3=ErrorMessage3)
 
@@ -476,45 +476,45 @@ def searchcarregbyengtypetable():
         submit = request.form["searchx"].strip()
         print("This is what you entered: ", submit)
         # checking the first letter is a capital as that is the format of the data in the table
-        if (submit[0].isupper()):
-            print("The first letter is a capital letter")
+        #if (submit[0].isupper()):
+        #    print("The first letter is a capital letter")
             # checking that only letters and spaces are used as that is the format of the data in the table
-            if all(char.isalpha() or char.isspace() for char in submit):
-                print("Your input is a string of letters or spaces")
+        #    if all(char.isalpha() or char.isspace() for char in submit):
+        #        print("Your input is a string of letters or spaces")
 
-                with sqlite3.connect("C:\\Users\jarla\OneDrive\Desktop\TestDB.db") as conn:
-                    cur = conn.cursor()
-                    cur.execute("select * from Fileforcarenginetype where Fueltype = '%s'" % submit)
-                    row = cur.fetchone()
-                    if row:
-                        print("")
-                        print("printing the full row inside the loop ", row)
-                        c = []
-                        d = [2007, 2010, 2013, 2016, 2019, 2021]
-                        e = []
-                        f = []
-                        for i in row:
-                            c.append(i)
-                        c.pop(0)
-                        print("")
-                        print("printing the full list c inside the loop after popping the first element ", c)
-                        for j in c:
-                            e.append(float(j.replace(',', '')))
-                        print("")
-                        print("This is subset d ", d)
-                        print("")
-                        print("printing the full list e inside the loop after removing the commas in the numbers ", e)
-                        print("There is a row in the database for that sector")
-                        return render_template('Chart8.html', data6=json.dumps(e), country6=json.dumps(submit))
-                    else:
-                        ErrorMessage = "Passed all checks but No sector found Please return to the previous page and select an option"
-                        return render_template('ErrorPage.html', ErrorMessage=ErrorMessage)
+        with sqlite3.connect("C:\\Users\jarla\OneDrive\Desktop\TestDB.db") as conn:
+            cur = conn.cursor()
+            cur.execute("select * from Fileforcarenginetype where Fueltype = '%s'" % submit)
+            row = cur.fetchone()
+            if row:
+                print("")
+                print("printing the full row inside the loop ", row)
+                c = []
+                d = [2007, 2010, 2013, 2016, 2019, 2021]
+                e = []
+                f = []
+                for i in row:
+                    c.append(i)
+                c.pop(0)
+                print("")
+                print("printing the full list c inside the loop after popping the first element ", c)
+                for j in c:
+                    e.append(float(j.replace(',', '')))
+                print("")
+                print("This is subset d ", d)
+                print("")
+                print("printing the full list e inside the loop after removing the commas in the numbers ", e)
+                print("There is a row in the database for that sector")
+                return render_template('Chart8.html', data6=json.dumps(e), country6=json.dumps(submit))
             else:
-                print("IsAlphaFalse Your input contains something other than letters")
-                return render_template('ErrorPage.html', ErrorMessage="IsAlphaFalseEnter letters only")
-        else:
-            print("IsUpperFalseThe first letter is not a capital letter")
-            return render_template('ErrorPage.html', ErrorMessage="IsUpperFalseStart with a capital letter")
+                ErrorMessage = "Passed all checks but no result found Please return to the previous page and select an option"
+                return render_template('ErrorPage.html', ErrorMessage=ErrorMessage)
+    #else:
+    #    print("IsAlphaFalse Your input contains something other than letters")
+    #    return render_template('ErrorPage.html', ErrorMessage="IsAlphaFalseEnter letters only")
+#else:
+#    print("IsUpperFalseThe first letter is not a capital letter")
+#    return render_template('ErrorPage.html', ErrorMessage="IsUpperFalseStart with a capital letter")
 
 @app.route("/searchcarregbyengtypetable2", methods=["POST", "GET"])
 ##this works to check if the country is on the list and returns its graph of the trend over time of the greenhouse gas emmissions

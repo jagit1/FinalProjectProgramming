@@ -94,7 +94,7 @@
   </div>
 </nav>
 
-<main class="container">
+<main class="container" style = "background-color: #CAF3FE; margin-bottom: -40px">
   <!--<div class="bg-light p-5 rounded">-->
 <!--
 <div class="d-flex gap-5 justify-content-center">
@@ -212,7 +212,7 @@
     </form>
   </div>
 
-  <div class="dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px" style = "background-color: #ffffff">
+  <div class="dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px" style = "background-color: #ffffff; margin-top: -20px;">
   <p style ="color: #000000; text-align: center;">See trends in all fuel types used to generate electricity in Ireland, trend from 1990 to 2021 </p>
   <form class="p-2 mb-2 bg-dark border-bottom border-dark" name="allfueltypegraphform" action="{{url_for('searchirishenergytableall')}}" method="POST">
   <input type="radio" id="allfueltypegraphform" name="allfueltypegraphform" value="allfueltypegraphform" onChange="this.form.submit()">

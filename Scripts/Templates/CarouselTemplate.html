@@ -181,15 +181,15 @@
   <div class="d-flex gap-5 justify-content-center" id="dropdownMacos" style = "float: left; width:100%;">
 
   <ul class="dropdown-menu dropdown-menu-macos mx-0 shadow" style="width: 300px;">
-    <li><p class="dropdown-item-main">International</p></li>
+    <li><p class="dropdown-item-main">Search International Environmental Indicators</p></li>
     <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="{{ url_for('index') }}" >Proportion of Renewable Energy</a></li>
-    <li><a class="dropdown-item" href="{{ url_for('searchintwaste') }}">Waste Recycling</a></li>
-    <li><a class="dropdown-item" href="{{ url_for('searchghg') }}">Greenhouse Gas Emissions</a></li>
+    <li><a class="dropdown-item" href="{{ url_for('index') }}" >Percentage of Renewable Energy</a></li>
+    <li><a class="dropdown-item" href="{{ url_for('searchintwaste') }}">Levels of Waste Recycling</a></li>
+    <li><a class="dropdown-item" href="{{ url_for('searchghg') }}">Greenhouse Gas Emissions Trends</a></li>
 
   </ul>
   <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-macos mx-0 border-0 shadow" style="width: 300px;">
-    <li><p class="dropdown-item-main">Ireland</p></li>
+    <li><p class="dropdown-item-main">Search Irish Environmental Indicators</p></li>
     <li><hr class="dropdown-divider"></li>
 
     <li><a class="dropdown-item" href="{{ url_for('searchcarregbyengtype') }}">Cars Registered By Engine Type</a></li>
@@ -248,7 +248,7 @@
     </a>
 
     <ul class="nav col-md-4 justify-content-end">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="{{ url_for('home') }}" class="nav-link px-2 text-muted">Home</a></li>
       <li class="nav-item"><a href="https://www.ipcc.ch/" class="nav-link px-2 text-muted">IPCC</a></li>
       <li class="nav-item"><a href="https://climate.nasa.gov/" class="nav-link px-2 text-muted">NASA</a></li>
       <li class="nav-item"><a href="https://www.epa.ie/" class="nav-link px-2 text-muted">EPA</a></li>

@@ -8,7 +8,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.104.2">
     <title>Top navbar example · Bootstrap v5.2</title>
-
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/footers/">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/navbar-static/">
 <!--amended below by adding the reference to it on the web-->
     <link href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
@@ -156,7 +156,27 @@
         <button class="btn btn-outline-success" name ="submit"  onsubmit="{{url_for('searchrenewableenergy')}}" method="POST">Search</button>
       </form>
   </div><!--Not finding the above bootstrap still - Error 404-->
+
+
 </main>
+
+<div class="b-example-divider" style="background-color: #ffffff; margin-top: 30vh"></div>
+  <div class="container" >
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" style="#">
+    <p class="col-md-4 mb-0 text-muted">&copy; Earth Status, 2022</p>
+
+    <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+    </a>
+
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item"><a href="{{ url_for('home') }}" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="https://www.ipcc.ch/" class="nav-link px-2 text-muted">IPCC</a></li>
+      <li class="nav-item"><a href="https://climate.nasa.gov/" class="nav-link px-2 text-muted">NASA</a></li>
+      <li class="nav-item"><a href="https://www.epa.ie/" class="nav-link px-2 text-muted">EPA</a></li>
+    </ul>
+  </footer>
+</div>
 
 <!--Not finding the below still - Error 304-->
     <!--<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>-->

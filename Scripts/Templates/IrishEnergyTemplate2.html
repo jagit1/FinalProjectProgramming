@@ -1,3 +1,4 @@
+<!--showing the energy production trend over the timescale based on the fuel type-->
 <!DOCTYPE html>
 <!--taken from Bootstrap examples here: https://getbootstrap.com/docs/5.2/examples/dropdowns/-->
 <html lang="en">
@@ -180,7 +181,7 @@
 
     <!-- OPTION C - Checkboxes  UNCOMMENT BELOW TO GET THAT BACK WORKING AGAIN>-->
 <div class="dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px" style = "background-color: #ffffff">
-  <p style ="color: #000000; text-align: center;">Select a Fuel Type below to see how many kilotons of energy generated from that fuel type were used in Ireland, trend from 1990 to 2021 </p>
+  <p style ="color: #000000; text-align: center;">Select a Fuel Type to see how how much energy was generated from that fuel type in Ireland, trend from 1990 to 2021 </p>
   <form class="p-2 mb-2 bg-dark border-bottom border-dark" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST">
 
     <form class="p-2 mb-2 bg-dark border-bottom border-dark" name="search4" action="{{url_for('searchirishenergytable')}}" method="POST">
@@ -204,7 +205,7 @@
   </div>
 
   <div class="dropdown-menu dropdown-menu-dark d-block position-static border-0 pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px" style = "background-color: #ffffff">
-  <p style ="color: #000000; text-align: center;">Compare trends in all fuel types used to generate electricity in Ireland, trend from 1990 to 2021 </p>
+  <p style ="color: #000000; text-align: center;">See trends in all fuel types used to generate electricity in Ireland, trend from 1990 to 2021 </p>
   <form class="p-2 mb-2 bg-dark border-bottom border-dark" name="allfueltypegraphform" action="{{url_for('searchirishenergytableall')}}" method="POST">
   <input type="radio" id="allfueltypegraphform" name="allfueltypegraphform" value="allfueltypegraphform" onChange="this.form.submit()">
   <label for="allfueltypegraphform"> Show all Fuel types above on one graph</label><br>

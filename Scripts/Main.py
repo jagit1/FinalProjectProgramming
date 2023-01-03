@@ -361,42 +361,42 @@ def searchirishenergytable():
         submit = request.form["search4"].strip()
         print("This is what you entered: ", submit)
 #checking the first letter is a capital as that is the format of the data in the table
-        if (submit[0].isupper()):
-            print("The first letter is a capital letter")
+        #if (submit[0].isupper()):
+        #    print("The first letter is a capital letter")
 # checking that only letters and spaces are used as that is the format of the data in the table
-            if all(char.isalpha() or char.isspace() for char in submit):
-                print("Your input is a string of letters or spaces")
+        #    if all(char.isalpha() or char.isspace() for char in submit):
+        #        print("Your input is a string of letters or spaces")
 
-                with sqlite3.connect("C:\\Users\jarla\OneDrive\Desktop\TestDB.db") as conn:
-                    cur = conn.cursor()
-                    cur.execute("select * from IrishEnergyBreakdown where FuelType = '%s'" %submit)
-                    row  = cur.fetchone()
-                    if row:
-                        print("")
-                        print("printing the full row inside the loop ", row)
-                        c = []
-                        d = [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2021]
-                        e = []
-                        f = []
-                        for i in row:
-                            c.append(i)
-                        c.pop(0)
-                        print("")
-                        print("printing the full list c inside the loop after popping the first element ", c)
-                        print("")
-                        print("This is subset d ", d)
-                        print("")
-                        print("There is a row in the database for that country")
-                        return render_template('Chart6.html', data4=json.dumps(c), country4=json.dumps(submit))
-                    else:
-                        ErrorMessage = "Passed all checks but No fueltype found Please return to the previous page and select an option"
-                        return render_template('ErrorPage.html' , ErrorMessage=ErrorMessage)
+        with sqlite3.connect("C:\\Users\jarla\OneDrive\Desktop\TestDB.db") as conn:
+            cur = conn.cursor()
+            cur.execute("select * from IrishEnergyBreakdown where FuelType = '%s'" %submit)
+            row  = cur.fetchone()
+            if row:
+                print("")
+                print("printing the full row inside the loop ", row)
+                c = []
+                d = [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2021]
+                e = []
+                f = []
+                for i in row:
+                    c.append(i)
+                c.pop(0)
+                print("")
+                print("printing the full list c inside the loop after popping the first element ", c)
+                print("")
+                print("This is subset d ", d)
+                print("")
+                print("There is a row in the database for that country")
+                return render_template('Chart6.html', data4=json.dumps(c), country4=json.dumps(submit))
             else:
-                print("IsAlphaFalse Your input contains something other than letters")
-                return render_template('ErrorPage.html', ErrorMessage="IsAlphaFalseEnter letters only")
-        else:
-            print("IsUpperFalseThe first letter is not a capital letter")
-            return render_template('ErrorPage.html', ErrorMessage="IsUpperFalseStart with a capital letter")
+                ErrorMessage = "Passed all checks but No fueltype found Please return to the previous page and select an option"
+                return render_template('ErrorPage.html' , ErrorMessage=ErrorMessage)
+            #else:
+            #    print("IsAlphaFalse Your input contains something other than letters")
+            #    return render_template('ErrorPage.html', ErrorMessage="IsAlphaFalseEnter letters only")
+        #else:
+        #    print("IsUpperFalseThe first letter is not a capital letter")
+        #    return render_template('ErrorPage.html', ErrorMessage="IsUpperFalseStart with a capital letter")
 
 
 @app.route("/searchirishenergytableall", methods=["POST", "GET"])
@@ -416,42 +416,42 @@ def searchirishenergybysectortable():
         submit = request.form["search5"].strip()
         print("This is what you entered: ", submit)
 #checking the first letter is a capital as that is the format of the data in the table
-        if (submit[0].isupper()):
-            print("The first letter is a capital letter")
+        #if (submit[0].isupper()):
+        #    print("The first letter is a capital letter")
 # checking that only letters and spaces are used as that is the format of the data in the table
-            if all(char.isalpha() or char.isspace() for char in submit):
-                print("Your input is a string of letters or spaces")
+        #    if all(char.isalpha() or char.isspace() for char in submit):
+        #        print("Your input is a string of letters or spaces")
 
-                with sqlite3.connect("C:\\Users\jarla\OneDrive\Desktop\TestDB.db") as conn:
-                    cur = conn.cursor()
-                    cur.execute("select * from SectIrelandEnergy where Sector = '%s'" %submit)
-                    row  = cur.fetchone()
-                    if row:
-                        print("")
-                        print("printing the full row inside the loop ", row)
-                        c = []
-                        d = [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2021]
-                        e = []
-                        f = []
-                        for i in row:
-                            c.append(i)
-                        c.pop(0)
-                        print("")
-                        print("printing the full list c inside the loop after popping the first element ", c)
-                        print("")
-                        print("This is subset d ", d)
-                        print("")
-                        print("There is a row in the database for that sector")
-                        return render_template('Chart7.html', data5=json.dumps(c), country5=json.dumps(submit))
-                    else:
-                        ErrorMessage = "Passed all checks but No sector found Please return to the previous page and select an option"
-                        return render_template('ErrorPage.html' , ErrorMessage=ErrorMessage)
+        with sqlite3.connect("C:\\Users\jarla\OneDrive\Desktop\TestDB.db") as conn:
+            cur = conn.cursor()
+            cur.execute("select * from SectIrelandEnergy where Sector = '%s'" %submit)
+            row  = cur.fetchone()
+            if row:
+                print("")
+                print("printing the full row inside the loop ", row)
+                c = []
+                d = [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2021]
+                e = []
+                f = []
+                for i in row:
+                    c.append(i)
+                c.pop(0)
+                print("")
+                print("printing the full list c inside the loop after popping the first element ", c)
+                print("")
+                print("This is subset d ", d)
+                print("")
+                print("There is a row in the database for that sector")
+                return render_template('Chart7.html', data5=json.dumps(c), country5=json.dumps(submit))
             else:
-                print("IsAlphaFalse Your input contains something other than letters")
-                return render_template('ErrorPage.html', ErrorMessage="IsAlphaFalseEnter letters only")
-        else:
-            print("IsUpperFalseThe first letter is not a capital letter")
-            return render_template('ErrorPage.html', ErrorMessage="IsUpperFalseStart with a capital letter")
+                ErrorMessage = "Passed all checks but no sector found. Please return to the previous page and select an option"
+                return render_template('ErrorPage.html' , ErrorMessage=ErrorMessage)
+            #else:
+            #    print("IsAlphaFalse Your input contains something other than letters")
+            #    return render_template('ErrorPage.html', ErrorMessage="IsAlphaFalseEnter letters only")
+        #else:
+        #    print("IsUpperFalseThe first letter is not a capital letter")
+        #    return render_template('ErrorPage.html', ErrorMessage="IsUpperFalseStart with a capital letter")
 
 @app.route("/searchirishenergysectorall", methods=["POST", "GET"])
 def searchirishenergysectorall():
@@ -583,7 +583,7 @@ def searchcarregbyengtypetable2():
         #                print("")
         #                print("printing the full list e inside the loop after removing the commas in the numbers ", e)
         #                print("There is a row in the database for that sector")
-        return render_template('Chart10.html')
+        #return render_template('Chart10.html')
         #            else:
         #                ErrorMessage = "Passed all checks but No sector found Please return to the previous page and select an option"
         #                return render_template('ErrorPage.html', ErrorMessage=ErrorMessage)
